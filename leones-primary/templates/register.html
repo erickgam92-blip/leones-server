@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-wrapper">
+    <form method="post" class="auth-form">
+        <h1>Registro</h1>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <label>
+            Usuario:
+            <input type="text" name="username" required>
+        </label>
+        <label>
+            Contraseña:
+            <input type="password" name="password" required>
+        </label>
+        <button type="submit">Registrarse</button>
+    </form>
+</div>
+{% endblock %}

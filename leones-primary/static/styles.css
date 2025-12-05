@@ -1,0 +1,370 @@
+/* ====== RESET SENCILLO ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* ====== FONDO Y TIPOGRAFÍA ====== */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #1f2933, #111827);
+    color: #e5e7eb;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    color: #e5e7eb;
+    padding: 0.8rem 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.brand {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    color: #fde68a;
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: #facc15;
+}
+
+.nav-right a,
+.nav-user {
+    color: #e5e7eb;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 0.95rem;
+}
+
+.nav-right a:hover {
+    color: #fbbf24;
+}
+
+/* ====== CONTENEDOR GENERAL ====== */
+.container {
+    max-width: 960px;
+    margin: 1.5rem auto 2.5rem;
+    padding: 0 1rem;
+}
+
+/* ====== TITULOS ====== */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+}
+
+/* ====== TARJETA GENÉRICA ====== */
+.card {
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* ====== NUEVO POST ====== */
+.new-post {
+    margin-bottom: 1.5rem;
+}
+
+.new-post form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.new-post input[type="text"],
+.new-post textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.8);
+    color: #e5e7eb;
+    font-size: 0.95rem;
+}
+
+.new-post input::placeholder,
+.new-post textarea::placeholder {
+    color: #9ca3af;
+}
+
+.new-post textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.new-post label {
+    font-size: 0.9rem;
+    color: #d1d5db;
+}
+
+/* ====== BOTONES ====== */
+button {
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.08s ease;
+    box-shadow: 0 10px 25px rgba(248, 181, 0, 0.35);
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(248, 181, 0, 0.45);
+    opacity: 0.95;
+}
+
+button.danger {
+    background: linear-gradient(135deg, #f97373, #ef4444);
+    color: #111827;
+    box-shadow: 0 10px 25px rgba(248, 113, 113, 0.35);
+}
+
+/* ====== POSTS ====== */
+.posts {
+    margin-top: 0.5rem;
+}
+
+.post {
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.post header {
+    margin-bottom: 0.6rem;
+}
+
+.post h2 {
+    margin-bottom: 0.2rem;
+}
+
+.post .meta {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+.post .meta a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.post .meta a:hover {
+    text-decoration: underline;
+}
+
+.post p {
+    margin-top: 0.3rem;
+    line-height: 1.4;
+}
+
+/* ====== IMÁGENES DEL POST ====== */
+.post-image-wrapper {
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.post-image {
+    max-width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* ====== REACCIONES Y ACCIONES ====== */
+.reactions-summary {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: #e5e7eb;
+}
+
+.post-actions {
+    margin-top: 0.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.post-actions form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.post-actions button {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.8rem;
+}
+
+/* ====== COMENTARIOS ====== */
+.comments {
+    margin-top: 0.8rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+.comments h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.comments ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.comments li {
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+}
+
+.comments li strong {
+    color: #fbbf24;
+}
+
+.comment-date {
+    font-size: 0.7rem;
+    color: #9ca3af;
+    margin-left: 0.25rem;
+}
+
+.no-comments {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.comment-form {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.comment-form input[type="text"] {
+    flex: 1;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+    font-size: 0.85rem;
+}
+
+/* ====== FORMULARIOS DE LOGIN/REGISTRO ====== */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(15, 23, 42, 0.95);
+    padding: 1.5rem 1.75rem;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.auth-form h1 {
+    margin-bottom: 0.8rem;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.3rem;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+}
+
+.auth-form button {
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.error {
+    color: #fecaca;
+    background: rgba(127, 29, 29, 0.6);
+    border-radius: 10px;
+    padding: 0.4rem 0.55rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+/* ====== PERFIL ====== */
+.profile-header {
+    margin-bottom: 1rem;
+}
+
+.profile-header h1 {
+    margin-bottom: 0.25rem;
+}
+
+.profile-header p {
+    font-size: 0.9rem;
+    color: #d1d5db;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.6rem 1rem;
+    }
+
+    .container {
+        padding: 0 0.8rem;
+    }
+
+    .post {
+        padding: 0.9rem 1rem;
+    }
+
+    .post-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .new-post form {
+        padding: 0.75rem 0.2rem;
+    }
+}
